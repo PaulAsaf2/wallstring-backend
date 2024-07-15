@@ -8,6 +8,10 @@ const port = process.env.PORT || 3002
 app.use(cors())
 app.use(express.text())
 
+app.get('/', (req, res) => {
+  res.send({ message: 'Hello, World!' })
+})
+
 app.post('/check-initdata', (req, res) => {
   const params = new URLSearchParams(req.body)
   const parsedData = {}
